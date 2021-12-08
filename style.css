@@ -31,20 +31,19 @@ body{
   justify-content: center;
   min-height: 100vh;
   background-color:#D3EFDE;
-   animation: mymove 20s infinite;
    font-family: ubuntu,sans-serif;
   font-weight: 700;
   font-style: normal;
+  animation: mymove 20s infinite;
 }
 
-}
 
 @keyframes mymove {
-  0% {background-color: #D3EFDE;}
-  25% {background-color: #7C8B95;}
-  50% {background-color:#D3C5E3;}
-  75% {background-color: #BBC9B7;}
-  100% {background-color: #D3EFDE;};
+  0% {background-color: black;}
+  25% {background-color: #55365a;}
+  50% {background-color:#2e3b47;}
+  75% {background-color: #52634e;}
+  100% {background-color: black;};
 }
 .wrapper{
   width: 380px;
