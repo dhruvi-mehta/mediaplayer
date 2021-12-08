@@ -45,7 +45,7 @@ let allMusic = [
 
   },
   {
-    name: "Cyanide",
+    name: "CYANIDE",
     artist: "Daniel Caesar",
     img: "music-8",
     src: "music-8"

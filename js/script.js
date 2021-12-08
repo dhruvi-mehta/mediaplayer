@@ -140,24 +140,22 @@ repeatBtn.addEventListener("click", ()=>{
 
 //code for what to do after song ended
 mainAudio.addEventListener("ended", ()=>{
-  // we'll do according to the icon means if user has set icon to
-  // loop song then we'll repeat the current song and will do accordingly
-  let getText = repeatBtn.innerText; //getting this tag innerText
+  let getText = repeatBtn.innerText; 
   switch(getText){
     case "repeat":
-      nextMusic(); //calling nextMusic function
+      nextMusic();
       break;
     case "repeat_one":
-      mainAudio.currentTime = 0; //setting audio current time to 0
-      loadMusic(musicIndex); //calling loadMusic function with argument, in the argument there is a index of current song
-      playMusic(); //calling playMusic function
+      mainAudio.currentTime = 0; 
+      loadMusic(musicIndex); 
+      playMusic(); 
       break;
     case "shuffle":
-      let randIndex = Math.floor((Math.random() * allMusic.length) + 1); //genereting random index/numb with max range of array length
+      let randIndex = Math.floor((Math.random() * allMusic.length) + 1);
       do{
         randIndex = Math.floor((Math.random() * allMusic.length) + 1);
-      }while(musicIndex == randIndex); //this loop run until the next random number won't be the same of current musicIndex
-      musicIndex = randIndex; //passing randomIndex to musicIndex
+      }while(musicIndex == randIndex); 
+      musicIndex = randIndex;
       loadMusic(musicIndex);
       playMusic();
       playingSong();
@@ -165,7 +163,6 @@ mainAudio.addEventListener("ended", ()=>{
   }
 });
 
-//show music list onclick of music icon
 moreMusicBtn.addEventListener("click", ()=>{
   musicList.classList.toggle("show");
 });
@@ -174,9 +171,7 @@ closemoreMusic.addEventListener("click", ()=>{
 });
 
 const ulTag = wrapper.querySelector("ul");
-// let create li tags according to array length for list
 for (let i = 0; i < allMusic.length; i++) {
-  //let's pass the song name, artist from the array
   let liTag = `<li li-index="${i + 1}">
                 <div class="row">
                   <span>${allMusic[i].name}</span>
@@ -185,7 +180,7 @@ for (let i = 0; i < allMusic.length; i++) {
                 <span id="${allMusic[i].src}" class="audio-duration">3:40</span>
                 <audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
               </li>`;
-  ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
+  ulTag.insertAdjacentHTML("beforeend", liTag);
 
   let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
   let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
@@ -193,11 +188,11 @@ for (let i = 0; i < allMusic.length; i++) {
     let duration = liAudioTag.duration;
     let totalMin = Math.floor(duration / 60);
     let totalSec = Math.floor(duration % 60);
-    if(totalSec < 10){ //if sec is less than 10 then add 0 before it
+    if(totalSec < 10){ 
       totalSec = `0${totalSec}`;
     };
-    liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-    liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
+    liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; 
+    liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); 
   });
 }
 

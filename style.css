@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+<!--  Not my code- Coding By CodingNepal - youtube.com/codingnepal 
+https://www.youtube.com/watch?v=1-CvPn4AbT4&t=249s&ab_channel=CodingNepal
+ --> 
+
+
+@import url('https:/fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: ubuntu,sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 *::before, *::after{
   padding: 0;
@@ -25,6 +32,10 @@ body{
   min-height: 100vh;
   background-color:#D3EFDE;
    animation: mymove 20s infinite;
+   font-family: ubuntu,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 }
 
